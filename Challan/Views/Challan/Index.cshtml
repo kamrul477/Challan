@@ -1,0 +1,155 @@
+﻿@model Challan.ViewModels.SinglePage
+
+@{
+    ViewBag.Title = "CreateSinglePage";
+}
+
+<h2>Index</h2>
+
+
+
+
+@using (Html.BeginForm("CreateSinglePage", "Challan", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+
+    <div class="panel-group">
+        @*details of applicant*@
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <p>Applicant Details</p>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="applicantName" class="control-label col-sm-2">Applicant Name:</label>
+                    <div class="col-sm-10">
+                        @*<input type="text" class="form-control col-sm-10" id="applicant">*@
+                        @Html.TextBoxFor(s => s.ApplicantName, new { @class = "form-control col-sm-10" })
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="designation" class="control-label col-sm-2">Applicant Designation:</label>
+                    <div class="col-sm-10">
+                        @*<input type="text" class="form-control col-sm-10" id="designation">*@
+                        @Html.TextBoxFor(s => s.ApplicantDesignation, new { @class = "form-control col-sm-10" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="applicantAddress" class="control-label col-sm-2">Applicant Address:</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(s => s.ApplicantStreetName, new { @class = "form-control", @placeholder = "Street Name" })
+                        @Html.TextBoxFor(s => s.ApplicantHouseNo, new { @class = "form-control", @placeholder = "House No" })
+                        @*<input type="text" class="form-control" id="applicantStreetName" placeholder="Street Name">
+                            <input type="text" class="form-control" id="applicantHouseNo" placeholder="House No">*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*Details of Medium*@
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <p>Holder On Behalf Of Applicant</p>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="holder" class="control-label col-sm-2">Holder Name:</label>
+                    <div class="col-sm-10">
+                        @*<input type="text" class="form-control col-sm-10" id="holderName">*@
+                        @Html.TextBoxFor(s => s.HolderName, new { @class = "form-control col-sm-10" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Address" class="control-label col-sm-2">Address of Holder:</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(s => s.HolderStreetName, new { @class = "form-control", @placeholder = "Street Name" })
+                        @Html.TextBoxFor(s => s.HolderHouseNo, new { @class = "form-control", @placeholder = "House No" })
+                        @*<input type="text" class="form-control" id="holderStreetName" placeholder="Street Name">
+                            <input type="text" class="form-control" id="holderHouseNo" placeholder="House No">*@
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*Receivers Details*@
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <p>Acceptor Details</p>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="receiverName" class="control-label col-sm-2">Receiver Name:</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(s => s.AcceptorName, new { @class = "form-control col-sm-10" })
+                        @*<input type="text" class="form-control col-sm-10" id="receiverName">*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="receiverDesignation" class="control-label col-sm-2">Receivers Designation:</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(s => s.AcceptorDesignation, new { @class = "form-control col-sm-10" })
+                        @*<input type="text" class="form-control col-sm-10" id="receiverDesignation">*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="receiverDepartment" class="control-label col-sm-2">Receiver Department:</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(s => s.AcceptorDepartment, new { @class = "form-control col-sm-10" })
+                        @*<input type="text" class="form-control" id="receiverDepartment" placeholder="Department">*@
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+}
+
+
+
+
+
+@*        public string ApplicantName { get; set; }
+    public string AcceptorName { get; set; }
+    public string HolderName { get; set; }
+
+    public string AcceptorDesignation { get; set; }
+    public string ApplicantDesignation { get; set; }
+    public string AcceptorDepartment { get; set; }
+    public string StreetName { get; set; }
+    public int HouseNo { get; set; }
+    public string BranchName { get; set; }
+    public string ReasonForDeposit { get; set; }
+    public double Taka { get; set; }
+    public double Poisa { get; set; }
+    public string NameOfDistrict { get; set; }
+    public int PostalCode { get; set; }*@
+@*<fieldset>
+        <legend>District</legend>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.NameOfDistrict)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NameOfDistrict)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.PostalCode)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PostalCode)
+        </div>
+    </fieldset>*@
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
